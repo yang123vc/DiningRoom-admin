@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <h1>NOTfound</h1>
+    <div class="dr-notfound">
+        <h1>404 ! NOT Notfound</h1>
     </div>
 </template>
 
@@ -14,6 +14,15 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss">
+.dr-notfound{    
+    // position: absolute;
+    // left: 50%;
+    // top:50%;
+    // margin-left:-160px;
+    // margin-top:20px;
+    text-align: center;
+    padding-top:200px; 
+}
 
 </style>
