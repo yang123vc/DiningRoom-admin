@@ -24,7 +24,7 @@ import DishUpdata from './views/DishUpdata.vue'
 import OrderList from './views/OrderList.vue'
 import Security from './views/Security.vue'
 
-
+import MainHeader from './components/MainHeader.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -32,9 +32,10 @@ export default new Router({
     {path: '/', redirect: "/login"},
     {path: '/login', component: login},
     {
-      path: '/main', 
-      component: Main,
+      path: '/main', component: Main,
       children:[
+        {path:'/',redirect:'/table/list'},
+        {path:'/MainHeader',component:MainHeader},
         {path:'/settings',component:GlobalSettings},
         {path:'/table/list',component:TableList},
         {path:'/table/add',component:TableAdd},
