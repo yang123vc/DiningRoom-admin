@@ -7,7 +7,7 @@
         </el-breadcrumb>
         <el-row>
             <el-col v-for="(n,index) in TableList" :key="index" :xs="12" :sm="8" :md="6" :lg="4" :xl="2">
-               <dr-table :data="t"></dr-table>
+               <dr-table :data="n"></dr-table>
             </el-col>
         </el-row>
     </div>
@@ -20,6 +20,14 @@ import Table from '../components/table'
             return {
                 TableList:[]
             }
+        },
+        mounted(){
+            var url = this.$store.state.globalSettings.apiUrl+'/admin/table';
+            this.$axios.get(url).then(({data})=>{
+                this.TableList = data;
+            }).catch((err)=>{
+                console.log(err);
+            })
         },
         components:{
             "dr-table":Table
